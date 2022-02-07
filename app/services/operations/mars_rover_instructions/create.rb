@@ -5,11 +5,14 @@ module Operations
     class Create < ComposableOperations::Operation
       processes :params
 
-      attr_accessor :rover, :mars_grid, :object
+      attr_accessor :rover, :mars_grid
+      attr_reader :object, :validator
+
+      delegate :errors, to: :validator
 
       def execute
         build
-        # validate
+        validate
         movement_instructions
         @object
       end

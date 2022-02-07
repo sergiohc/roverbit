@@ -12,7 +12,7 @@ class HomeController < ApplicationController
     if operator.succeeded?
       render json: operator.object.map(&:new_position)
     else
-      render json: operator.messages
+      render json: operator.errors.messages
     end
   end
 end

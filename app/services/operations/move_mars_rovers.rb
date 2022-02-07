@@ -4,7 +4,9 @@ module Operations
   class MoveMarsRovers < ComposableOperations::Operation
     processes :params
 
-    attr_reader :object
+    attr_reader :object, :validator
+
+    delegate :errors, to: :validator
 
     def execute
       validate
