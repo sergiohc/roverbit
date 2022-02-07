@@ -23,7 +23,7 @@ module Operations
       return true unless File.exist?(@file) && File.open(@file).each_line.count < 3
 
       errors.add(:errors,
-                 message: 'A configuração do arquivo não é valida, o arquivo precisa no mínimo de 3 linhas de instrução.')
+                 message: 'A configuração do arquivo não é valida')
       false
     end
   end
