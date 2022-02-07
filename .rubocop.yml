@@ -1,0 +1,13 @@
+AllCops:
+  SuggestExtensions: false
+  NewCops: enable
+  Exclude:
+    - bin/**/*
+    - lib/**/*
+    - config/**/*
+    - db/**/*
+    - test/test_helper.rb
+    - spec/**/*
+
+Style/Documentation:
+  Enabled: false

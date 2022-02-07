@@ -1,0 +1,30 @@
+version: "3.3"
+
+services:
+  db:
+    container_name: roverbit_db
+    image: "postgres:12.2"
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+  app:
+    container_name: roverbit_app
+    build: .
+    command: bash start.sh
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      - DB_PASSWORD=postgres
+    volumes:
+      - .:/app
+      - gems:/gems
+    stdin_open: true
+    tty: true
+
+volumes:
+  postgres:
+  gems:
