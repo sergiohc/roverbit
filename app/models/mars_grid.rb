@@ -4,7 +4,6 @@ class MarsGrid
   include MarsGridHelper
 
   attr_accessor :plateau
-  attr_reader :x_axis, :y_axis
 
   def x_axis
     plateau[0]

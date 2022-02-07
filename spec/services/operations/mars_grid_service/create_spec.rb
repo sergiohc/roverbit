@@ -3,14 +3,14 @@ require 'rails_helper'
 RSpec.describe ::Operations::MarsGridService::Create, type: :service do
   context '#create' do
     it 'when params are valid' do
-      @operator = ::Operations::MarsGridService::Create.new [5, 5]
+      @operator = ::Operations::MarsGridService::Create.new ["5", "5"]
       @operator.perform
       @mars_grid = @operator.object
 
 
       expect(@operator.succeeded?).to be_truthy
       expect(@operator.object.nil?).to be_falsy
-      expect(@operator.object.plateau).to eq [5, 5]
+      expect(@operator.object.plateau).to eq ["5", "5"]
     end
 
     it 'when params are invalid' do
@@ -23,7 +23,7 @@ RSpec.describe ::Operations::MarsGridService::Create, type: :service do
     end
 
     it 'when params exist but invalid' do
-      @operator = ::Operations::MarsGridService::Create.new ['T', 5]
+      @operator = ::Operations::MarsGridService::Create.new ['T', "5"]
       @operator.perform
       @mars_grid = @operator.object
 

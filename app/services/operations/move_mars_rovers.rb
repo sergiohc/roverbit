@@ -27,14 +27,11 @@ module Operations
       @file_chomp = File.readlines(params[:file], chomp: true)
       @plateau = @file_chomp[0].split
       @mars_grid = create_mars_grid
-      @instructions = instructions
+      @instructions = parse_instructions([], 1)
       @object = move_rover
     end
 
-    def instructions
-      instructions = []
-      count = 1
-
+    def parse_instructions(instructions, count)
       @file_chomp[1..4].select.with_index do |value, index|
         if index.even?
           instructions << { instructions: { rover: create_rover(value) } }
