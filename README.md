@@ -12,8 +12,6 @@ docker-compose run --rm app bundle exec rake db:create
 
 docker-compose up
 ```
-
-
 ### Run Test
 ```shell
 docker-compose run --rm app bundle exec rspec
