@@ -63,8 +63,6 @@ jobs:
         with:
           name: coverage-report
           path: coverage
-        - name: Create Coverage Badge
-
       - name: Create Coverage Badge
         uses: schneegans/dynamic-badges-action@v1.1.0
         with:
