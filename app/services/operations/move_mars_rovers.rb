@@ -49,7 +49,7 @@ module Operations
 
       return operator.object if operator.succeeded?
 
-      halt operator.message
+      halt operator.errors.messages
     end
 
     def create_rover(position)

@@ -35,7 +35,7 @@ module Operations
 
       def movement_instructions
         @object.movement_instructions.each_char do |command|
-          send(Instruction::DIRECTIONS[command])
+          send(Instruction::DIRECTIONS[command]) if Instruction::DIRECTIONS[command]
         end
 
         @object.new_position = [@position, MarsGrid::CARDINAL.key(@current_degree)].join(' ')

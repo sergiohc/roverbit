@@ -13,26 +13,8 @@ module MarsGridHelper
 
   CARDINAL = {
     'N' => 90,
-    'E' => 180,
+    'E' => 0,
     'S' => 270,
-    'W' => 360
+    'W' => 180
   }.freeze
-
-  COMMANDS = {
-    'L' => :left,
-    'R' => :right,
-    'M' => :move
-  }.freeze
-
-  def coordinate_plane_angles
-    COORDINATE_PLANE_ANGLES
-  end
-
-  def cardinal
-    CARDINAL
-  end
-
-  def commands
-    COMMANDS
-  end
 end

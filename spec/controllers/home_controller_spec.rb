@@ -5,7 +5,7 @@ describe HomeController, type: :controller  do
     it "with a valid instructions" do
       post :create, params: { file: 'rover-sample.txt' }
       expect(JSON.parse(response.body)[0]).to include("1 3 N")
-      expect(JSON.parse(response.body)[1]).to include("1 5 E")
+      expect(JSON.parse(response.body)[1]).to include("5 1 E")
     end
 
     it "with a invalid instructions" do
