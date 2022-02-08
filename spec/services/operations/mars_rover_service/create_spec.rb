@@ -16,7 +16,6 @@ RSpec.describe ::Operations::MarsRoverService::Create, type: :service do
       @operator.perform
       @mars_rover = @operator.object
 
-
       expect(@operator.succeeded?).to be_falsy
       expect(@operator.errors[:errors][0][:message]).to eq('Cardinal inválido, verifique se o valor corresponde a (N E S W)')
     end

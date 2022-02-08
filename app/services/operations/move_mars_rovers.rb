@@ -49,7 +49,8 @@ module Operations
 
       return operator.object if operator.succeeded?
 
-      halt operator.errors.messages
+      merge_errors(operator.errors)
+      halt operator.errors
     end
 
     def create_rover(position)
@@ -58,7 +59,8 @@ module Operations
 
       return operator.object if operator.succeeded?
 
-      halt operator.message
+      merge_errors(operator.errors)
+      halt operator.errors
     end
 
     def move_rover
@@ -67,6 +69,12 @@ module Operations
         operator.mars_grid = @mars_grid
         operator.perform
         operator.object
+      end
+    end
+
+    def merge_errors(errors)
+      errors.messages[:errors].each do |error|
+        @validator.errors.add(:errors, message: error[:message])
       end
     end
   end
