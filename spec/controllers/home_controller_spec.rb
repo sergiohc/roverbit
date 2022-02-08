@@ -21,6 +21,13 @@ describe HomeController, type: :controller  do
 
   context "#create" do
     it "with a invalid instructions" do
+      post :create, params: { file: 'rover-invalid-plateau.txt' }
+      expect(JSON.parse(response.body)['errors'][0]['message']).to include("Plateau inválido, verifique se o valor de X é igual a 5")
+    end
+  end
+
+  context "#create" do
+    it "with a invalid instructions" do
       post :create, params: { file: 'rover-error-cardinal.txt' }
       expect(JSON.parse(response.body)['errors'][0]['message']).to include("Cardinal inválido, verifique se o valor corresponde a (N E S W)")
     end
