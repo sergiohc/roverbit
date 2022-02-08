@@ -1,4 +1,6 @@
-# Coverage
+# Mars Rover Challenge
+
+### Coverage
 ![Coverage](https://github.com/sergiohc/roverbit/workflows/CI/badge.svg)
 
 ### Build
