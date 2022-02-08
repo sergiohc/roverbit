@@ -29,8 +29,8 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
-gem 'active_model_serializers', '~> 0.10.2'
 gem 'composable_operations', '~> 0.10.0'
+gem 'simplecov', require: false, group: :test
 
 group :development, :test do
   gem 'byebug', platform: :mri
