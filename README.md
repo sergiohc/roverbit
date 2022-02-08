@@ -1,4 +1,3 @@
-##Coverage
 ![Coverage](https://github.com/sergiohc/roverbit/workflows/CI/badge.svg)
 
 docker-compose build
