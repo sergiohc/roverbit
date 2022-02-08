@@ -63,3 +63,16 @@ jobs:
         with:
           name: coverage-report
           path: coverage
+        - name: Create Coverage Badge
+
+      - name: Create Coverage Badge
+        uses: schneegans/dynamic-badges-action@v1.1.0
+        with:
+          auth: ${{ secrets.GIST_SECRET }}
+          gistID: a551a219fc297681db0ed1c98f806ba2
+          filename: ./coverage/.last_run.json
+          label: coverage
+          message: ${{ env.COVERAGE }}
+          namedLogo: jest
+          color: blue
+          logoColor: lightblue
