@@ -5,7 +5,9 @@ services:
     container_name: roverbit_db
     image: "postgres:12.2"
     environment:
-      - POSTGRES_PASSWORD=postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_HOST: db
     volumes:
       - postgres:/var/lib/postgresql/data
 
@@ -18,7 +20,9 @@ services:
     depends_on:
       - db
     environment:
-      - DB_PASSWORD=postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_HOST: db
     volumes:
       - .:/app
       - gems:/gems
